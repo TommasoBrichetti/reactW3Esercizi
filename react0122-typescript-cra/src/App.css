@@ -21,7 +21,7 @@
 }
 
 .artCard {
-  width: 40%;
+  width: 30%;
   margin-bottom: 5vh;
   
 }
@@ -44,7 +44,7 @@ justify-content: center;
 }
 .cardDetail{
   width: 80%;
-  padding-bottom: 5vh;
+
   
 }
 

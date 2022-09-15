@@ -77,11 +77,11 @@ const SingleArticle = () => {
                                 </Typography>
                                 <Typography variant="subtitle2" color="text.secondary">
                                     Published: {myTime(article.publishedAt)} - Last Update:{myTime(article.publishedAt)}
-                                </Typography>
+                                </Typography><Link to={'/'} className='iconBack'> <ArrowBackIcon/> </Link>
                             </CardContent>
                         </CardActionArea>
 
-                        <Link to={'/'} className='iconBack'> <ArrowBackIcon/> </Link>
+                        
 
                     </Card>
                 )
