@@ -31,11 +31,15 @@ const FetchArticle = () => {
     }
 
     return (
-        <div className='newsContainer'>
-            {article.map((art, i) => (
-                <ArticleCard key={art.id} art={art} />
-            ))}
+        <div>
+            <h1 className='title'>Space News</h1>
+            <div className='newsContainer'>
+                {article.map((art, i) => (
+                    <ArticleCard key={art.id} art={art} />
+                ))}
+            </div>
         </div>
+
     )
 }
 
