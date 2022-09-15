@@ -1,7 +1,7 @@
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { logInAction } from '../redux/actions'
+import { logInAction, logOutAction } from '../redux/actions'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import {  FaHome  } from 'react-icons/fa'
@@ -30,7 +30,9 @@ const User = (props) => {
     }
 
     const logOut = () => {
-        // dispach(logOutAction())
+        dispach(logOutAction())
+        localStorage.clear();
+        navigate('/')
     }
 
     return (

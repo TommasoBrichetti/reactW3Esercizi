@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+
+}
+
+
+/* new css */
+.newsContainer {
+
+  display: flex !important;
+  background-color: #282c34;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+
+.artCard {
+  width: 40%;
+  margin-bottom: 5vh;
+  
+}
+.artCard a .h5{
+  color: darkslategray;
+}
+.artCard a{
+  color: black;
+}
+.artCard a:hover{
+ color: black;
+ text-decoration: none;
+}
+
+.singleContainer{
+  height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.cardDetail{
+  width: 80%;
+  padding-bottom: 5vh;
+  
+}
+
+.iconBack{
+  margin-top: 5vh;
+}
+
+
+html{background-color: #282c34;}
