@@ -164,6 +164,13 @@ html{
   justify-content: space-around;
 }
 
+.albumarea{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
 
 
 .singleCard{
@@ -177,6 +184,7 @@ html{
   color: white;
   font-size: .7rem;
 }
+
 .singleCard img{
   width: 100%;
 }

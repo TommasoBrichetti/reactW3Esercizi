@@ -43,30 +43,30 @@ const Home = () => {
 
     const randomLoad = () => {
 
-        for (let i = 0; i < 4; i++) {
+        while(rockRandomArtists.length<4) {
             let artist = rockArtists[Math.floor(Math.random() * rockArtists.length)]
             if (!rockRandomArtists.includes(artist)) {
-                let copy = [...rockRandomArtists]
-                copy.push(artist)
+                let copy = rockRandomArtists
+                rockRandomArtists.push(artist)
                 setRockRandomArtists(copy)
             }
         }
 
-        for (let i = 0; i < 4; i++) {
+        while(popRandomArtists.length<4) {
             let artist = popArtists[Math.floor(Math.random() * popArtists.length)]
             if (!popRandomArtists.includes(artist)) {
-                let copy = [...popRandomArtists]
-                copy.push(artist)
+                let copy = popRandomArtists
+                popRandomArtists.push(artist)
                 setPopRandomArtists(copy)
             }
         }
 
-        for (let i = 0; i < 4; i++) {
+        while(hipHopRandomArtists.length<4) {
             let artist =
                 hipHopArtists[Math.floor(Math.random() * hipHopArtists.length)]
             if (!hipHopRandomArtists.includes(artist)) {
-                let copy = [...hipHopRandomArtists]
-                copy.push(artist)
+                let copy = hipHopRandomArtists
+                hipHopRandomArtists.push(artist)
                 setHipHopRandomArtists(copy)
             }
         }
