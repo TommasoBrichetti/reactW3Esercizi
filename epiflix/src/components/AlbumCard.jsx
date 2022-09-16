@@ -42,8 +42,27 @@ const AlbumCard = (props) => {
 
 
     return (
-        <div>
-            {/* <SingleAlbum album={artist[0].album} artist={artist[0].artist} /> */}
+        <div className='albumCard'>
+            {
+                artist.length !== 0 && (
+                <SingleAlbum album={artist[0].album} artist={artist[0].artist} />
+                )
+            }  
+            {
+                artist.length !== 0 && (
+                <SingleAlbum album={artist[1].album} artist={artist[1].artist} />
+                )
+            }  
+            {
+                artist.length !== 0 && (
+                <SingleAlbum album={artist[2].album} artist={artist[2].artist} />
+                )
+            }  
+            {
+                artist.length !== 0 && (
+                <SingleAlbum album={artist[3].album} artist={artist[3].artist} />
+                )
+            }  
         </div>
     )
 

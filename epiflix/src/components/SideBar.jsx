@@ -1,10 +1,15 @@
 import { TiHomeOutline } from 'react-icons/ti'
 import { GoBook } from 'react-icons/go'
 import { useState } from 'react'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { getArtAction } from '../redux/actions'
 
 const SideBar = () => {
 
     const [query, setQuery] = useState('')
+    
+    const dispatch = useDispatch()
 
     const handleChange = (e) => {
         setQuery(e.target.value)
@@ -12,7 +17,7 @@ const SideBar = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        //servirà il dispach
+        dispatch(getArtAction(query))
         console.log(query);
     }
 

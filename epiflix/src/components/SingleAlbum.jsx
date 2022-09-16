@@ -1,8 +1,8 @@
 
 const SingleAlbum = (props) =>{
     return(
-        <div>
-            <img src={props.album.cover_small} alt="album cover" />
+        <div className="singleCard">
+            <img src={props.album.cover} alt="album cover" />
             <p>Album: {props.album.title}</p>
             <p>Artist: {props.artist.name}</p>
         </div>

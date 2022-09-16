@@ -1,5 +1,15 @@
+html{
+  background: rgb(46, 63, 87);
+  background: linear-gradient(
+    90deg,
+    rgb(63, 86, 119) 0%,
+    rgba(33, 44, 61, 1) 42%,
+    rgb(15, 21, 29) 100%
+  );
+}
 .App {
   /* text-align: center; */
+  display: flex;
 }
 
 
@@ -8,7 +18,7 @@
   /* position: fixed;  */
   /* top: 0; */
   box-sizing: border-box;
-  width: 11%;
+  width: 13%;
   height: 100vh;
   background-color: #000;
   padding: 20px 15px;
@@ -86,7 +96,7 @@
   color: black;
   border: 1px solid white;
   border-radius: 20px;
-  width: 180px;
+  width: 100%;
   margin-bottom: 20px;
   padding: .6rem 0;
 }
@@ -95,7 +105,7 @@
   color: white;
   border: 1px solid white;
   border-radius: 20px;
-  width: 180px;
+  width: 100%;
   margin-bottom: 20px;
   padding: .6rem 0;
 }
@@ -113,4 +123,75 @@
 .asideText{
   font-size: .8rem;
   margin: 0 auto;
+}
+
+
+/* --------------- */
+.home{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  height: 100vh;
+}
+.nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  color: rgb(145, 145, 145);
+  font-size: .8rem;
+  font-weight: bold;
+}
+.nav p:hover{
+  color: white;
+}
+.home h2{
+  font-size: 2rem;
+  color: white;
+  margin-top: 5vh;
+}
+
+.firstLoad{
+  width: 100%;
+}
+
+.albumCard{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.singleCard{
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+  text-align: center;
+  color: white;
+  font-size: .7rem;
+}
+.singleCard img{
+  width: 100%;
+}
+
+.searchLoad{
+  width: 100%;
+}
+
+.searchResults{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.searcCard{
+  margin: 0 2vw;
 }

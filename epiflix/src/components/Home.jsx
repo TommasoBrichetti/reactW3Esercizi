@@ -1,5 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import FirstLoadSuggestions from './FirstLoadSuggestions'
+import { useSelector } from 'react-redux'
+import AlbumCard from './AlbumCard'
 
 const Home = () => {
 
@@ -31,34 +33,41 @@ const Home = () => {
         'kanyewest',
     ]
 
+    const artContenent = useSelector((state) => state.art.artists)
+
 
     //todo passare questi al child per poi passare il singolo artista alla card 2 sub child
-    let rockRandomArtists = []
-    let popRandomArtists = []
-    let hipHopRandomArtists = []
+    const [rockRandomArtists, setRockRandomArtists] = useState([])
+    const [popRandomArtists, setPopRandomArtists] = useState([])
+    const [hipHopRandomArtists, setHipHopRandomArtists] = useState([])
 
     const randomLoad = () => {
 
-        while (rockRandomArtists.length < 4) {
+        for (let i = 0; i < 4; i++) {
             let artist = rockArtists[Math.floor(Math.random() * rockArtists.length)]
             if (!rockRandomArtists.includes(artist)) {
-                rockRandomArtists.push(artist)
+                let copy = [...rockRandomArtists]
+                copy.push(artist)
+                setRockRandomArtists(copy)
             }
         }
 
-
-        while (popRandomArtists.length < 4) {
+        for (let i = 0; i < 4; i++) {
             let artist = popArtists[Math.floor(Math.random() * popArtists.length)]
             if (!popRandomArtists.includes(artist)) {
-                popRandomArtists.push(artist)
+                let copy = [...popRandomArtists]
+                copy.push(artist)
+                setPopRandomArtists(copy)
             }
         }
 
-        while (hipHopRandomArtists.length < 4) {
+        for (let i = 0; i < 4; i++) {
             let artist =
                 hipHopArtists[Math.floor(Math.random() * hipHopArtists.length)]
             if (!hipHopRandomArtists.includes(artist)) {
-                hipHopRandomArtists.push(artist)
+                let copy = [...hipHopRandomArtists]
+                copy.push(artist)
+                setHipHopRandomArtists(copy)
             }
         }
     }
@@ -66,7 +75,7 @@ const Home = () => {
 
     useEffect(() => {
         randomLoad()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 
@@ -79,10 +88,35 @@ const Home = () => {
                 <p>NEW RELEASES</p>
                 <p>DISCOVER</p>
             </div>
+
+            {artContenent.length !== 0 && <div className='searchLoad'>
+
+                <h2>Search Results</h2>
+
+                <div className='searchResults'>
+
+                {
+                    artContenent.map((data, i) => (
+                        <div className="singleCard searcCard">
+                        <img src={data.album.cover} alt="album cover" />
+                        <p>Album: {data.album.title}</p>
+                        <p>Artist: {data.artist.name}</p>
+                    </div>
+                    ))
+                }
+                </div>
+
+            </div>}
+
+
+
             <div className="firstLoad">
-                <FirstLoadSuggestions arr={rockRandomArtists}/>
-                <FirstLoadSuggestions arr={popRandomArtists}/>
-                <FirstLoadSuggestions arr={hipHopRandomArtists}/>
+                <h2>Rock Classics</h2>
+                <FirstLoadSuggestions arr={rockRandomArtists} />
+                <h2>Pop Culture</h2>
+                <FirstLoadSuggestions arr={popRandomArtists} />
+                <h2>#HipHop</h2>
+                <FirstLoadSuggestions arr={hipHopRandomArtists} />
             </div>
         </div>
     )
